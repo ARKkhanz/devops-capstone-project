@@ -5,6 +5,7 @@ metadata:
 spec:
   workspaces:
     - name: pipeline-workspace
+    - name: registry-credentials
   params:
     - name: repo-url
       type: string
@@ -71,6 +72,8 @@ spec:
       workspaces:
         - name: source
           workspace: pipeline-workspace
+        - name: dockerconfig
+          workspace: registry-credentials
       taskRef:
         name: buildah
         kind: ClusterTask
